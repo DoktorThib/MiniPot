@@ -9,40 +9,40 @@ void MOTOR_init(){
   pinMode(PIN_MOTOR1_1, OUTPUT);
 
 /*All motor off*/
-  digitalWrite(PIN_MOTOR0_0, LOW);
-  digitalWrite(PIN_MOTOR0_1, LOW);
-  digitalWrite(PIN_MOTOR1_0, LOW);
-  digitalWrite(PIN_MOTOR1_1, LOW);
+  analogWrite(PIN_MOTOR0_0, 0);
+  analogWrite(PIN_MOTOR0_1, 0);
+  analogWrite(PIN_MOTOR1_0, 0);
+  analogWrite(PIN_MOTOR1_1, 0);
 }
 
-void MOTOR_forward(){
-  digitalWrite(PIN_MOTOR0_0, HIGH);
-  digitalWrite(PIN_MOTOR0_1, LOW);
+void MOTOR_forward(int speedMotor){
+  analogWrite(PIN_MOTOR0_0, speedMotor);
+  analogWrite(PIN_MOTOR0_1, 0);
 
-  digitalWrite(PIN_MOTOR1_0, HIGH);
-  digitalWrite(PIN_MOTOR1_1, LOW);
+  analogWrite(PIN_MOTOR1_0, 0);
+  analogWrite(PIN_MOTOR1_1, speedMotor);
 }
 
-void MOTOR_backward(){
-  digitalWrite(PIN_MOTOR0_0, LOW);
-  digitalWrite(PIN_MOTOR0_1, HIGH);
+void MOTOR_backward(int speedMotor){
+  analogWrite(PIN_MOTOR0_0, 0);
+  analogWrite(PIN_MOTOR0_1, speedMotor);
   
-  digitalWrite(PIN_MOTOR1_0, LOW);
-  digitalWrite(PIN_MOTOR1_1, HIGH);
+  analogWrite(PIN_MOTOR1_0, speedMotor);
+  analogWrite(PIN_MOTOR1_1, 0);
 }
 
-void MOTOR_rotateLeft(){
-  digitalWrite(PIN_MOTOR0_0, HIGH);
-  digitalWrite(PIN_MOTOR0_1, LOW);
+void MOTOR_rotateRight(int speedMotor){
+  analogWrite(PIN_MOTOR0_0, 0);
+  analogWrite(PIN_MOTOR0_1, speedMotor);
   
-  digitalWrite(PIN_MOTOR1_0, LOW);
-  digitalWrite(PIN_MOTOR1_1, HIGH);
+  analogWrite(PIN_MOTOR1_0, 0);
+  analogWrite(PIN_MOTOR1_1, speedMotor);
 }
 
-void MOTOR_rotateRight(){
-  digitalWrite(PIN_MOTOR0_0, LOW);
-  digitalWrite(PIN_MOTOR0_1, HIGH);
+void MOTOR_rotateLeft(int speedMotor){
+  analogWrite(PIN_MOTOR0_0, speedMotor);
+  analogWrite(PIN_MOTOR0_1, 0);
   
-  digitalWrite(PIN_MOTOR1_0, HIGH);
-  digitalWrite(PIN_MOTOR1_1, LOW);
+  analogWrite(PIN_MOTOR1_0, speedMotor);
+  analogWrite(PIN_MOTOR1_1, 0);
 }

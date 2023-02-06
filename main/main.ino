@@ -17,5 +17,6 @@ void setup() {
 }
 
 void loop() {
-
+  MOTOR_rotateLeft(100);
+  delay(200);
 }
