@@ -5,11 +5,12 @@
 #include "param.h"
 
 void MOTOR_init(void);
-void MOTOR_backward(void);
-void MOTOR_forward(void);
 
-void MOTOR_rotateRight(void);
-void MOTOR_rotateLeft(void);
+void MOTOR_backward(int speedMotor);
+void MOTOR_forward(int speedMotor);
+
+void MOTOR_rotateRight(int speedMotor);
+void MOTOR_rotateLeft(int speedMotor);
 
 
 #endif
